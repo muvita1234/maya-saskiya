@@ -1,0 +1,181 @@
+/* ---------- GENERAL ---------- */
+body {
+    background: #ffe4ec;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    background: #fff;
+    max-width: 950px;
+    margin: auto;
+    padding: 22px;
+    border-radius: 14px;
+    box-shadow: 0 8px 30px rgba(255,105,180,0.12);
+    border: 2px solid #ffd6e8;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #d63384;
+    margin: 8px 0 16px 0;
+}
+
+/* ---------- FORM ---------- */
+.input-box, .filter-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+input[type="text"], input[type="number"], select {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ff9ac2;
+    background: #fff3f8;
+    font-size: 14px;
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: transform .12s ease, box-shadow .12s ease;
+}
+
+button:active { transform: translateY(1px); }
+
+.btn-primary {
+    background: linear-gradient(180deg,#ff6fa5,#ff4f8b);
+    color: white;
+    flex: 1;
+}
+.btn-danger {
+    background: linear-gradient(180deg,#ff3f6f,#e82c5a);
+    color: white;
+    flex: 1;
+}
+
+.btn-print {
+    background: linear-gradient(180deg,#ff92c7,#ff6fa5);
+    color: white;
+    flex: 1;
+}
+
+.btn-small {
+    background: #ffd6e8;
+    color: #d63384;
+    border: 1px solid #ff9ac2;
+    padding: 12px 14px;
+    border-radius: 10px;
+}
+
+/* ---------- TABLE ---------- */
+.table-wrap {
+    overflow-x: auto;
+    margin-bottom: 12px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+th, td {
+    border: 1px solid #ffb6d2;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background: #ff6fa5;
+    color: white;
+    font-weight: 700;
+}
+
+.action-btn {
+    padding: 6px 10px;
+    border-radius: 6px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.edit-btn { background: #f7b731; }
+.delete-btn { background: #eb3b5a; }
+
+/* ---------- TOTAL & TOAST ---------- */
+#total-saldo {
+    color: #d63384;
+    font-weight: 800;
+}
+
+#toast {
+    visibility: hidden;
+    min-width: 200px;
+    background: #ff6fa5;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    border-radius: 8px;
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: bold;
+    z-index: 9999;
+}
+#toast.show {
+    visibility: visible;
+    animation: fadein 0.35s, fadeout 0.35s 2s;
+}
+@keyframes fadein { from { bottom: 10px; opacity: 0 } to { bottom: 30px; opacity: 1 } }
+@keyframes fadeout { from { bottom: 30px; opacity: 1 } to { bottom: 10px; opacity: 0 } }
+
+/* ---------- PRINT STYLES ---------- */
+@media print {
+    body { background: white; }
+    .container { box-shadow: none; border: none; border-radius: 0; padding: 10px; }
+    button, input, select, #filter, .row, #toast, .btn-small { display: none !important; }
+    th, td { font-size: 12px; }
+    h1 { font-size: 20px; color: #000; }
+    h2 { font-size: 16px; color: #000; }
+    table { width: 100%; page-break-inside: avoid; }
+    .table-wrap { overflow: visible; }
+    @page { margin: 20mm; }
+}
+ /* ...CSS kamu sebelumnya... */
+
+/* --- Animasi Bunga Jatuh --- */
+.flower {
+    position: fixed;
+    top: -10px;
+    font-size: 20px;
+    color: #ff69b4;
+    animation: fall linear forwards;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0.7;
+    }
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Aplikasi Tabungan Siswa</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="container">
+    <h1>💗 Aplikasi Tabungan Siswa</h1>
+
+    <div class="input-box">
+        <label>Nama Siswa</label>
+        <input type="text" id="nama" placeholder="Masukkan nama siswa" />
+
+        <label>Nominal (Rp)</label>
+        <input type="number" id="nominal" placeholder="Masukkan nominal" />
+
+        <label>Jenis Transaksi</label>
+        <select id="jenis">
+            <option value="setor">Setor</option>
+            <option value="tarik">Tarik</option>
+        </select>
+
+        <div class="row">
+            <button class="btn-primary" onclick="prosesTransaksi()">Proses</button>
+            <button class="btn-danger" onclick="resetData()">Reset Semua Data</button>
+        </div>
+    </div>
+
+    <div class="filter-box">
+        <label>Cari Nama:</label>
+        <input type="text" id="filter" onkeyup="filterNama()" placeholder="Cari nama siswa..." />
+    </div>
+
+    <h2>Riwayat Transaksi</h2>
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nama</th>
+                    <th>Jenis</th>
+                    <th>Nominal</th>
+                    <th>Saldo Akhir</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody id="tabel-body"></tbody>
+        </table>
+    </div>
+
+    <h2>Total Saldo Semua Siswa: <span id="total-saldo">Rp 0</span></h2>
+
+    <div class="row">
+        <button class="btn-print" onclick="cetakPDF()">Cetak / Save as PDF</button>
+        <button class="btn-small" onclick="downloadCSV()">Download CSV</button>
+    </div>
+</div>
+
+<div id="toast">Berhasil!</div>
+
+
+<script src="script.js"></script>
+ <script>
+// --- Efek Bunga Jatuh ---
+function createFlower() {
+    const flower = document.createElement("div");
+    flower.classList.add("flower");
+    flower.innerText = "🌸";
+
+    flower.style.left = Math.random() * window.innerWidth + "px";
+    flower.style.animationDuration = 3 + Math.random() * 3 + "s";
+
+    document.body.appendChild(flower);
+
+    setTimeout(() => {
+        flower.remove();
+    }, 6000);
+}
+
+
+</script>
+ <script>
+// --- Efek Bunga Jatuh ---
+function createFlower() {
+    const flower = document.createElement("div");
+    flower.classList.add("flower");
+    flower.innerText = "🌸";
+
+    flower.style.left = Math.random() * window.innerWidth + "px";
+    flower.style.animationDuration = 3 + Math.random() * 3 + "s";
+
+    document.body.appendChild(flower);
+
+    setTimeout(() => {
+        flower.remove();
+    }, 6000);
+}
+
+setInterval(createFlower, 400);
+</script>
+</body>
+</html>
+
+</body>
+</html>
+
+</body>
+</html>
